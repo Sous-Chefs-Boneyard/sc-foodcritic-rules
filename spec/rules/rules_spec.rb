@@ -1,19 +1,5 @@
 require 'spec_helper'
 
-describe 'SC014' do
-  let(:fc_run) do
-    foodcritic_run('sc014')
-  end
-
-  it "generates a warning against bad metadata" do
-    expect(warnings(fc_run)).to include('incorrect.rb')
-  end
-
-  it "doesn't generate a warning against correct metadata" do
-    expect(warnings(fc_run)).to_not include('correct.rb')
-  end
-end
-
 describe "SC001" do
   let(:fc_run) do
     foodcritic_run('sc001')
@@ -37,3 +23,43 @@ describe "SC002" do
     expect(warnings(fc_run)).to_not include('CHANGELOG.md')
   end
 end
+
+describe "SC003" do
+  let(:fc_run) do
+    foodcritic_run('sc003')
+  end
+
+  it "generates a warning about the code_of_conduct in the wrong format" do
+    expect(warnings(fc_run)).to include('CODE_OF_CONDUCT')
+  end
+
+  it "does not generate a warning about the CHANGELOG.md file" do
+    expect(warnings(fc_run)).to_not include('CODE_OF_CONDUCT.md')
+  end
+end
+
+describe "SC004" do
+  let(:fc_run) do
+    foodcritic_run('sc004')
+  end
+
+  it "generates a warning about the contributing in the wrong format" do
+    expect(warnings(fc_run)).to include('CONTRIBUTING')
+  end
+
+  it "does not generate a warning about the CHANGELOG.md file" do
+    expect(warnings(fc_run)).to_not include('CONTRIBUTING.md')
+  end
+end
+
+describe "SC005" do
+  let(:fc_run) do
+    foodcritic_run('sc005')
+  end
+
+  it "generates a warning about the missing LICENCE file" do
+    expect(warnings(fc_run)).to include('LICENCE')
+  end
+end
+
+describe "SC"
