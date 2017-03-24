@@ -6,10 +6,10 @@ Gem::Specification.new do |spec|
   spec.name          = 'sous-chefs-foodcritic-rules'
   spec.version       = '0.0.1'
   spec.authors       = ['Sous Chefs']
-  spec.email         = ['james.burgess@lookout.com']
-  spec.description   = 'Custom foodcritic rules that are used at Lookout.'
-  spec.summary       = 'Custom foodcritic rules that are used at Lookout.'
-  spec.homepage      = ''
+  spec.email         = ['dan.webb@damacus.io']
+  spec.description   = 'Sous Chefs foodcritic rules'
+  spec.summary       = 'Sous Chefs foodcritic rules'
+  spec.homepage      = 'sous-chefs.org'
   spec.license       = 'Apache'
 
   spec.files         = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
