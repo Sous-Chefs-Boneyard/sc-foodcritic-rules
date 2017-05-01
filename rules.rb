@@ -52,12 +52,6 @@ end
 # rule 'SC012', 'Gemfile should depend on stove'
 # rule 'SC013', 'Gemfile should depend on test-kitchen'
 
-rule 'SC006', 'Missing LICENSE' do
-  tags %w(style license sous_chefs)
-  cookbook do |path|
-    ensure_file_exists path, 'LICENSE'
-  end
-end
 
 ### README.md ###
 
@@ -103,14 +97,6 @@ rule 'SC017', 'metadata.rb should use sous-chefs style maintainer_email' do
     [file_match(filename)] unless field_value(ast, 'maintainer_email') == expected
   end
 end
-
-rule 'SC018', 'metadata.rb should specify chef_version' do
-  tags %w(metadata supermarket chef12)
-  metadata do |ast, filename|
-    [file_match(filename)] unless field_value(ast, 'chef_version')
-  end
-end
-
 
 rule 'SC020', 'Missing .kitchen.yml' do
   tags %w(style kitchen sous_chefs)
