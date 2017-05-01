@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['dan.webb@damacus.io']
   spec.description   = 'Sous Chefs foodcritic rules'
   spec.summary       = 'Sous Chefs foodcritic rules'
-  spec.homepage      = 'sous-chefs.org'
+  spec.homepage      = 'https://sous-chefs.org'
   spec.license       = 'Apache'
 
   spec.files         = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
