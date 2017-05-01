@@ -34,13 +34,6 @@ rule 'SC017', 'metadata.rb should use sous-chefs style maintainer_email' do
   end
 end
 
-rule 'SC018', 'metadata.rb should specify chef_version' do
-  tags %w(metadata supermarket chef12 sc018)
-  metadata do |ast, filename|
-    [file_match(filename)] unless field_value(ast, 'chef_version')
-  end
-end
-
 rule 'SC019', 'metadata should not contain "attribute" keyword' do
   tags %w(metadata supermarket chef12 sc019)
   metadata do |ast, filename|
