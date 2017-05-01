@@ -111,12 +111,6 @@ rule 'SC018', 'metadata.rb should specify chef_version' do
   end
 end
 
-rule 'SC019', 'metadata should not contain "attribute" keyword' do
-  tags %w(metadata supermarket chef12)
-  metadata do |ast, filename|
-    [file_match(filename)] if field(ast, 'attribute').any?
-  end
-end
 
 rule 'SC020', 'Missing .kitchen.yml' do
   tags %w(style kitchen sous_chefs)
