@@ -3,38 +3,38 @@ def ensure_file_exists(basepath, filepath)
   [file_match(path)] unless File.exist?(path)
 end
 
-rule 'SC001', 'Missing Berksfile' do
-  tags %w(style berksfile sous_chefs)
+rule "SC001", "Missing Berksfile" do
+  tags %w{style berksfile sous_chefs}
   cookbook do |path|
-    ensure_file_exists path, 'Berksfile'
+    ensure_file_exists path, "Berksfile"
   end
 end
 
-rule 'SC002', 'Missing CHANGELOG in markdown format' do
-  tags %w(style changelog sous-chefs)
+rule "SC002", "Missing CHANGELOG in markdown format" do
+  tags %w{style changelog sous-chefs}
   cookbook do |path|
-    ensure_file_exists path, 'CHANGELOG.md'
+    ensure_file_exists path, "CHANGELOG.md"
   end
 end
 
-rule 'SC003', 'Missing CODE_OF_CONDUCT in markdown format' do
-  tags %w(style code_of_conduct sous-chefs)
+rule "SC003", "Missing CODE_OF_CONDUCT in markdown format" do
+  tags %w{style code_of_conduct sous-chefs}
   cookbook do |path|
-    ensure_file_exists path, 'CODE_OF_CONDUCT.md'
+    ensure_file_exists path, "CODE_OF_CONDUCT.md"
   end
 end
 
-rule 'SC004', 'Missing CONTRIBUTING in markdown format' do
-  tags %w(style contributing sous-chefs)
+rule "SC004", "Missing CONTRIBUTING in markdown format" do
+  tags %w{style contributing sous-chefs}
   cookbook do |path|
-    ensure_file_exists path, 'CONTRIBUTING.md'
+    ensure_file_exists path, "CONTRIBUTING.md"
   end
 end
 
-rule 'SC005', 'Missing LICENSE' do
-  tags %w(style license sous_chefs)
+rule "SC005", "Missing LICENSE" do
+  tags %w{style license sous_chefs}
   cookbook do |path|
-    ensure_file_exists path, 'LICENSE'
+    ensure_file_exists path, "LICENSE"
   end
 end
 
