@@ -4,13 +4,13 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "sous-chefs-foodcritic-rules"
-  spec.version       = "0.0.1"
+  spec.version       = "0.1.0"
   spec.authors       = ["Sous Chefs"]
-  spec.email         = ["dan.webb@damacus.io"]
+  spec.email         = ["help@sous-chefs.org"]
   spec.description   = "Sous Chefs foodcritic rules"
   spec.summary       = "Sous Chefs foodcritic rules"
   spec.homepage      = "https://sous-chefs.org"
-  spec.license       = "Apache"
+  spec.license       = "Apache-2.0"
 
   spec.files         = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
