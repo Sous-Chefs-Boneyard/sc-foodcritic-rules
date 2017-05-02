@@ -14,7 +14,7 @@ describe 'SC014' do
   end
 end
 
-describe 'SC015'
+describe 'SC015' do
   let(:fc_run) do
     foodcritic_run('sc015')
   end
@@ -28,7 +28,7 @@ describe 'SC015'
   # end
 end
 
-describe 'SC016'
+describe 'SC016' do
   let(:fc_run) do
     foodcritic_run('sc016')
   end
@@ -42,7 +42,7 @@ describe 'SC016'
   # end
 end
 
-describe 'SC017'
+describe 'SC017' do
   let(:fc_run) do
     foodcritic_run('sc017')
   end
@@ -56,7 +56,7 @@ describe 'SC017'
   # end
 end
 
-describe 'SC018'
+describe 'SC018' do
   let(:fc_run) do
     foodcritic_run('sc018')
   end
@@ -70,7 +70,7 @@ describe 'SC018'
   # end
 end
 
-describe 'SC019'
+describe 'SC019' do
   let(:fc_run) do
     foodcritic_run('sc019')
   end
