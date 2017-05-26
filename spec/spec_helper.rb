@@ -3,6 +3,7 @@ require "foodcritic"
 require "shellwords"
 require "rspec_command"
 require "simplecov"
+require 'pry'
 
 SimpleCov.start do
   add_filter "/spec/"
@@ -85,7 +86,8 @@ module FunctionalHelpers
       super
       klass.extend ClassMethods
       # Set a default subject command, can be overridden if needed.
-      klass.foodcritic_command("--no-progress", ".")
+      klass.foodcritic_command('.','-I lib/foodcritic/rules')
+      puts "current dir #{Dir.pwd}"
     end
   end
 
@@ -102,9 +104,9 @@ RSpec.configure do |config|
   # config.define_derived_metadata(file_path: %r{spec/unit}) do |metadata|
   #   metadata[:unit] = true
   # end
-  # config.define_derived_metadata(file_path: %r{spec/functional}) do |metadata|
-  #   metadata[:functional] = true
-  # end
+  config.define_derived_metadata(file_path: %r{spec/functional}) do |metadata|
+    metadata[:functional] = true
+  end
   # config.define_derived_metadata(file_path: %r{spec/regression}) do |metadata|
   #   metadata[:regression] = true
   # end
@@ -112,4 +114,4 @@ RSpec.configure do |config|
   config.include FunctionalHelpers#, functional: true
 end
 
-# require_relative "../lib/foodcritic/rules"
+require_relative "../lib/foodcritic/rules"
