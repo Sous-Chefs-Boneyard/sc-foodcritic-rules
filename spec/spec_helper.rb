@@ -82,12 +82,18 @@ module FunctionalHelpers
       file("metadata.rb", *args, &block)
     end
 
+    def cookbook_file(file, *args, &block)
+      file(file, *args, &block)
+    end
+
     def included(klass)
       super
       klass.extend ClassMethods
       # Set a default subject command, can be overridden if needed.
-      klass.foodcritic_command('.','-I lib/foodcritic/rules')
+      klass.foodcritic_command("--chef-version", "13.0.133", "--no-progress", ".", "--include", "/Users/dmw/cookbooks/sous-chefs/sc-foodcritic-rules/lib/foodcritic")
+
       puts "current dir #{Dir.pwd}"
+
     end
   end
 
@@ -113,5 +119,7 @@ RSpec.configure do |config|
   config.include RSpecCommand
   config.include FunctionalHelpers#, functional: true
 end
+
+puts "current dir #{Dir.pwd}"
 
 require_relative "../lib/foodcritic/rules"
